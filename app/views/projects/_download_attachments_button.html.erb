@@ -1,0 +1,7 @@
+<% if Attachment.joins("INNER JOIN issues ON issues.id = attachments.container_id AND attachments.container_type = 'Issue'").where(issues: { project_id: @project.id }).exists? %>
+  <p>
+    <%= link_to l(:label_download_all_attachments),
+                download_attachments_project_path(@project),
+                class: 'icon icon-download' %>
+  </p>
+<% end %>

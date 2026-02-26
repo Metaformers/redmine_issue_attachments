@@ -1,0 +1,7 @@
+<% if @issue.attachments.any? %>
+  <p>
+    <%= link_to l(:label_download_all_attachments),
+                download_attachments_issue_path(@issue),
+                class: 'icon icon-download' %>
+  </p>
+<% end %>
